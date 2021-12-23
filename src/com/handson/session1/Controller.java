@@ -44,7 +44,7 @@ public class Controller {
 				while (status) {
 					System.out.println("Select Customer ID?");
 					int custId = sc.nextInt();
-					if (custId >= allGuest.size()) {
+					if (custId > allGuest.size()) {
 						System.out.println("Wrong Id");
 					} else {
 						rooms.get(check - 100).setBookedBy(allGuest.get(custId - 1).getName());
@@ -52,13 +52,13 @@ public class Controller {
 						status = false;
 					}
 				}
+				Hotel.options();
 			} else {
 				System.out.println("Room is booked. Select another room.");
 				book();
 			}
 		}
 		sc.close();
-		Hotel.options();
 	}
 
 	public static void checkRoom() {
@@ -68,10 +68,11 @@ public class Controller {
 		if ((check - 100) > 9) {
 			System.out.println("Wrong room number");
 			checkRoom();
-		} else
+		} else {
 			System.out.println(rooms.get(check - 100).getStatus());
+			Hotel.options();
+		}
 		sc.close();
-		Hotel.options();
 	}
 
 	public static void email() {
