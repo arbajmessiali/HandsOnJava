@@ -49,6 +49,7 @@ public class Controller {
 					} else {
 						rooms.get(check - 100).setBookedBy(allGuest.get(custId - 1).getName());
 						rooms.get(check - 100).setStatus("booked");
+						System.out.println("Room "+check+" has been booked by "+rooms.get(check - 100).getBookedBy());
 						status = false;
 					}
 				}
@@ -98,11 +99,10 @@ public class Controller {
 		sc.close();
 	}
 
-	public static void bookings() {
+	public static void getAllBookings() {
 		for (int i = 0; i < rooms.size(); i++)
 			System.out.println((rooms.get(i).getRoomNo()) + "\t\t" + (rooms.get(i).getStatus()) + "\t\t"
 					+ (rooms.get(i).getBookedBy()));
-		System.out.println("\n\nSelect your option:");
 		Hotel.options();
 	}
 

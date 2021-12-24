@@ -26,7 +26,7 @@ public class Hotel {
 	public static void options() {
 		while (status) {
 			Scanner sc = new Scanner(System.in);
-			System.out.println("enter your choice: ");
+			System.out.println("Choose from menu: ");
 			choice = sc.nextInt();
 			switch (choice) {
 			case 1:
@@ -42,7 +42,7 @@ public class Hotel {
 				Controller.email();
 				break;
 			case 5:
-				Controller.bookings();
+				Controller.getAllBookings();
 				break;
 			case 6:
 				Controller.getAllCustomers();
