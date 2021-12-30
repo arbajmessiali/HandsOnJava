@@ -6,6 +6,7 @@ public class Controller {
 
 	private static List<Guest> allGuest = new ArrayList<Guest>();
 	private static List<Room> rooms = Hotel.getRooms();
+	private static List<Reservation> resv = new ArrayList<Reservation>();
 
 	public static void register() {
 		Scanner sc = new Scanner(System.in);
@@ -32,6 +33,7 @@ public class Controller {
 	public static void book() {
 		Scanner sc = new Scanner(System.in);
 		boolean status = true;
+		Reservation r;
 		System.out.println("select room number to book: ");
 		for (int i = 0; i < 10; i++)
 			System.out.println((100 + i) + "\t");
@@ -101,7 +103,7 @@ public class Controller {
 
 	public static void getAllBookings() {
 		for (int i = 0; i < rooms.size(); i++)
-			System.out.println((rooms.get(i).getRoomNo()) + "\t\t" + (rooms.get(i).getStatus()) + "\t\t"
+			System.out.println((rooms.get(i).getRoomNo()) + "\t\t" + (rooms.get(i).getType()) + "\t\t" + (rooms.get(i).getStatus()) + "\t\t"
 					+ (rooms.get(i).getBookedBy()));
 		Hotel.options();
 	}

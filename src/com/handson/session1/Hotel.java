@@ -11,9 +11,13 @@ public class Hotel {
 	private static List<Room> allRoom = new ArrayList<Room>();
 	
 	public static void main(String[] args) {
-		for(int i=0; i<10; i++)
+		for(int i=0; i<20; i++)
 		{
-			Room r = new Room((100+i), "vacant", "");
+			Room r;
+			if(i%2==0)
+				r = new Room((100+i),"nonAc", "vacant", "");
+			else
+				r = new Room((100+i),"AC", "vacant", "");
 			allRoom.add(r);
 		}
 		options();
@@ -27,6 +31,13 @@ public class Hotel {
 		while (status) {
 			Scanner sc = new Scanner(System.in);
 			System.out.println("Choose from menu: ");
+			System.out.println("1. Register new customer");
+			System.out.println("2. Book a room");
+			System.out.println("3. Check room status");
+			System.out.println("4. Change/update email");
+			System.out.println("5. Check all bookings");
+			System.out.println("6. Check all customer deatils");
+			System.out.println("7. Exit");
 			choice = sc.nextInt();
 			switch (choice) {
 			case 1:
